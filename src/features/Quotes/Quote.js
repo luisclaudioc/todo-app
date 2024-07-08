@@ -30,7 +30,7 @@ export default function Quote() {
 
     return (
         <div className="Quote">
-            <p>{quote.text}</p>
+            <p>{quote.quote}</p>
         </div>
     )
 }

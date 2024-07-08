@@ -2,6 +2,7 @@ import React from "react";
 import Todo from "../Todos/Todo";
 
 export default function Dones({ dones }) {
+    
     return (
         <div className="container">
             <h2>DONE:</h2>

@@ -2,6 +2,7 @@ import React from "react";
 import Todo from "./Todo";
 
 export default function Todos({ todos }) {
+    
     return (
         <div className="container">
             <h2>TO DO:</h2>

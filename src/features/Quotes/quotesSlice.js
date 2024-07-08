@@ -1,7 +1,10 @@
+
 import { createSlice } from "@reduxjs/toolkit";
 
 
-const API_URL = 'https://api.quotable.io/quotes/random?tags=famous-quotes';
+const API_URL = 'https://api.api-ninjas.com/v1/quotes?category=happiness';
+const API_KEY = 'D4qzIBwPLLokshnJ9Dp1ew==jFqsRVIJ3k8fjrWq'
+
 
 export const quotesSlice = createSlice({
     name: 'quotes',
@@ -30,12 +33,18 @@ export const quotesSlice = createSlice({
 export const fetchRandomQuote = () => async (dispatch) => {
     dispatch(fetchQuoteStart());
     try {
-        // Simulate fetching from an API
-        const mockQuote = {
-            text: "The way to get started is to quit talking and begin doing.",
-            author: "Walt Disney"
-        };
-        dispatch(fetchQuoteSuccess(mockQuote));
+        const response = await fetch(API_URL, {
+            method: 'GET',
+            headers: {
+                'X-Api-Key': API_KEY,
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+        }
+        const result = await response.json();
+        dispatch(fetchQuoteSuccess(result[0]));
     } catch (error) {
         dispatch(fetchQuoteFailure(error.message));
     }
