@@ -6,13 +6,13 @@ import { fetchRandomQuote, selectQuote } from "./quotesSlice";
 export default function Quote() {
 
     const dispatch = useDispatch();
-    const { quote, isLoading, hasFailed } = useSelector(selectQuote);
+    const { quote, quoteIsLoading, quoteHasFailed } = useSelector(selectQuote);
 
     useEffect(() => {
         dispatch(fetchRandomQuote());
     }, [dispatch]);
 
-    if (isLoading) {
+    if (quoteIsLoading) {
         return (
             <div className="Quote">
                 <p>Loading...</p>
@@ -20,10 +20,10 @@ export default function Quote() {
         );
     }
 
-    if (hasFailed) {
+    if (quoteHasFailed) {
         return (
             <div className="Quote">
-                <p>Quote has failed.</p>
+                <p>No quote available.</p>
             </div>
         );
     }

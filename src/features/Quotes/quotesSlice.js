@@ -2,30 +2,30 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-const API_URL = 'https://api.api-ninjas.com/v1/quotes?category=happiness';
-const API_KEY = 'D4qzIBwPLLokshnJ9Dp1ew==jFqsRVIJ3k8fjrWq'
+const QUOTE_API_URL = 'https://api.api-ninjas.com/v1/quotes?category=happiness';
+const QUOTE_API_KEY = 'D4qzIBwPLLokshnJ9Dp1ew==jFqsRVIJ3k8fjrWq'
 
 
 export const quotesSlice = createSlice({
     name: 'quotes',
     initialState: {
         quote: {},
-        isLoading: false,
-        hasFailed: false,
+        quoteIsLoading: false,
+        quoteHasFailed: false,
     },
     reducers: {
         fetchQuoteStart: (state, action) => {
-            state.isLoading = true;
-            state.hasFailed = false;
+            state.quoteIsLoading = true;
+            state.quoteHasFailed = false;
         },
         fetchQuoteSuccess: (state, action) => {
-            state.isLoading = false;
-            state.hasFailed = false;
+            state.quoteIsLoading = false;
+            state.quoteHasFailed = false;
             state.quote = action.payload;
         },
         fetchQuoteFailure: (state, action) => {
-            state.isLoading = false;
-            state.hasFailed = true;
+            state.quoteIsLoading = false;
+            state.quoteHasFailed = true;
         },
     }
 });
@@ -33,15 +33,15 @@ export const quotesSlice = createSlice({
 export const fetchRandomQuote = () => async (dispatch) => {
     dispatch(fetchQuoteStart());
     try {
-        const response = await fetch(API_URL, {
+        const response = await fetch(QUOTE_API_URL, {
             method: 'GET',
             headers: {
-                'X-Api-Key': API_KEY,
+                'X-Api-Key': QUOTE_API_KEY,
                 'Content-Type': 'application/json'
             }
         });
         if (!response.ok) {
-            throw new Error(`Error: ${response.statusText}`);
+            throw new Error(`Error: Luis ${response.statusText}`);
         }
         const result = await response.json();
         dispatch(fetchQuoteSuccess(result[0]));

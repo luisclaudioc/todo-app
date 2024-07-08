@@ -27,7 +27,10 @@ h1, h2, h3 {
 
 
 .Weather {
+  display: flex;
+  flex-direction: column;
   text-align: right;
+  justify-content: center;
   height: 100px;
 }
 
@@ -155,11 +158,12 @@ input {
 
 
 .Quote {
-  position: absolute;
+  position: fixed;
   bottom: 5px;
   left: 0;
   right: 0;
   margin: auto;
+  font-style: italic;
 }
 
 
