@@ -3,7 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import todosReducer from '../features/Todos/todosSlice';
 import quoresReducer from '../features/Quotes/quotesSlice';
 import weatherReducer from '../features/Weather/weatherSlice';
-import pictureReducer from '../features/Pictures/temp'
+import pictureReducer from '../features/Pictures/picturesSlice'
 
 
 export default configureStore({
