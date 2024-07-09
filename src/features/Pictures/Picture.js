@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchPictures, selectPictures } from "./picturesSlice";
+import { fetchPictures, selectPictures } from "./temporary";
 
 export default function Picture() {
 
