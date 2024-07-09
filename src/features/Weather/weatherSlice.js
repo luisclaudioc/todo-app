@@ -1,4 +1,3 @@
-
 import { createSlice } from "@reduxjs/toolkit";
 
 
@@ -39,7 +38,6 @@ export const fetchWeather = (latitude, longitude) => async (dispatch) => {
             throw new Error(`Error: ${response.statusText}`);
         }
         const result = await response.json();
-        console.log(result)
         dispatch(fetchWeatherSuccess(result));
     } catch (error) {
         dispatch(fetchWeatherFailure(error.message));

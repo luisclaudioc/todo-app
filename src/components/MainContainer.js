@@ -2,10 +2,11 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectTodos } from "../features/Todos/todosSlice";
 import Weather from "../features/Weather/Weather";
-import TodoForm from "./TodoForm"
+import TodoForm from "./TodoForm";
 import Todos from "../features/Todos/Todos";
 import Dones from "../features/Dones/Dones";
-import Quote from "../features/Quotes/Quote"
+import Quote from "../features/Quotes/Quote";
+import Picture from "../features/Pictures/Picture";
 
 
 export default function MainContainer() {
@@ -21,6 +22,7 @@ export default function MainContainer() {
             <Todos todos={todos} />
             <Dones dones={dones} />
             <Quote />
+            <Picture />
         </div>
     )
 }
