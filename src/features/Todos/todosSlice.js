@@ -4,8 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = [
     {id: "1", text: "Do the dishes", done: false},
     {id: "2", text: "Clean the room", done: true},
-    {id: "3", text: "Walk the dog", done: false},
-    {id: "4", text: "Water plants", done: false},
+    {id: "3", text: "Water the dog", done: false},
+    {id: "4", text: "Walk plants", done: false},
     {id: "5", text: "Do the laundry", done: true},
     {id: "6", text: "Make the beds", done: false},
     {id: "7", text: "Study", done: true},
