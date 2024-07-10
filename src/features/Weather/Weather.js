@@ -31,7 +31,7 @@ export default function Weather() {
 
     
 
-    if (weatherIsLoading) {
+    if (weatherIsLoading || !weather.current) {
         return (
             <div className="Weather">
                 <p>Loading...</p>
@@ -39,7 +39,7 @@ export default function Weather() {
         );
     }
 
-    if (weatherHasFailed || !weather.current) {
+    if (weatherHasFailed) {
         return (
             <div className="Weather">
                 <p>No weather available.</p>
