@@ -8,7 +8,6 @@ export default function Picture() {
     const { pictures, picturesAreLoading, picturesHaveFailed } = useSelector(selectPictures);
     const [ pictureNumber, setPictureNumber ] = useState(0);
 
-
     useEffect(() => {
         dispatch(fetchPictures());
     }, [dispatch]);

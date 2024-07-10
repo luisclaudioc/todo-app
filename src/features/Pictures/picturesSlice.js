@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { createClient } from 'pexels';
 
-
 export const picturesSlice = createSlice({
     name: 'picture',
     initialState: {
@@ -41,7 +40,6 @@ export const fetchPictures = () => async (dispatch) => {
         dispatch(fetchPicturesFailure(error.message));
     }
 };
-
 
 export const selectPictures = (state) => state.picture;
 export const { fetchPicturesStart, fetchPicturesSuccess, fetchPicturesFailure } = picturesSlice.actions;

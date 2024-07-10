@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 // MOCK DATA
 const initialState = [
     {id: "1", text: "Do the dishes", done: false},
@@ -28,11 +27,11 @@ export const todosSlice = createSlice({
         },
         toggleDoneTodo: (state, action) => {
             const index = state.todos.findIndex(todo => todo.id === action.payload.id);
-            state.todos[index].done = !state.todos[index].done
+            state.todos[index].done = !state.todos[index].done;
         }
     }
 });
 
-export const selectTodos = (state) => state.todos.todos
-export const { addTodo, removeTodo, toggleDoneTodo } = todosSlice.actions
+export const selectTodos = (state) => state.todos.todos;
+export const { addTodo, removeTodo, toggleDoneTodo } = todosSlice.actions;
 export default todosSlice.reducer;

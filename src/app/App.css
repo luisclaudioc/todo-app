@@ -9,12 +9,6 @@ h1, h2, h3 {
   color: white;
 }
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 
 /* APP */
 
@@ -101,6 +95,9 @@ input {
 /* TODOS COMPONENTS */
 
 .Todo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   position: relative;
   margin: 7px;
   margin-left: 0;

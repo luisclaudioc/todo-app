@@ -5,9 +5,8 @@ import { addTodo } from "../features/Todos/todosSlice";
 
 export default function TodoForm() {
 
-    const [text, setText] = useState("")
-
     const dispatch = useDispatch();
+    const [text, setText] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();

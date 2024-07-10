@@ -1,7 +1,6 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const QUOTE_API_URL = 'https://api.api-ninjas.com/v1/quotes?category=inspirational';
 
 export const quotesSlice = createSlice({

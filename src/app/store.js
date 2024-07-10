@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import reducers
 import todosReducer from '../features/Todos/todosSlice';
 import quotesReducer from '../features/Quotes/quotesSlice';
 import weatherReducer from '../features/Weather/weatherSlice';
