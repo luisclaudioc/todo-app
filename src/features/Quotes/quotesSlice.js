@@ -2,9 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-const QUOTE_API_URL = 'https://api.api-ninjas.com/v1/quotes?category=happiness';
-const QUOTE_API_KEY = 'D4qzIBwPLLokshnJ9Dp1ew==jFqsRVIJ3k8fjrWq'
-
+const QUOTE_API_URL = 'https://api.api-ninjas.com/v1/quotes?category=inspirational';
 
 export const quotesSlice = createSlice({
     name: 'quotes',
@@ -36,7 +34,7 @@ export const fetchRandomQuote = () => async (dispatch) => {
         const response = await fetch(QUOTE_API_URL, {
             method: 'GET',
             headers: {
-                'X-Api-Key': QUOTE_API_KEY,
+                'X-Api-Key': process.env.REACT_APP_QUOTE_API_KEY,
                 'Content-Type': 'application/json'
             }
         });

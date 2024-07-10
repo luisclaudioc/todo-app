@@ -6,22 +6,20 @@ body {
 
 h1, h2, h3 {
   margin: 0;
+  color: white;
 }
 
 
 .App {
-  text-align: center;
-  justify-content: space-between;
+  margin: auto;
+  height: 100vh;
+  width: 80%;
 }
 
 .flex-row {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.MainContainer {
-  width: 80%;
 }
 
 
@@ -50,19 +48,12 @@ input {
 }
 
 
-.PictureSelector {
-  border: none;
-  font-size: 30px; 
-  cursor: pointer;
-  outline: none;
-  background: none; 
-  margin-left: 10px;
-  margin-right: 10px;
-}
+
 
 
 .container {
   position: relative;
+
   margin-bottom: 25px;
   padding: 20px;
   text-align: left;
@@ -158,12 +149,48 @@ input {
 
 
 .Quote {
+  color: white;
   position: fixed;
   bottom: 5px;
-  left: 0;
-  right: 0;
-  margin: auto;
+  left: 50%;
+  transform: translateX(-50%);
   font-style: italic;
+  text-align: center;
 }
 
 
+
+
+.Picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  object-fit: cover;
+  z-index: -1000;
+  filter: brightness(80%) blur(1px);
+  backdrop-filter: brightness(80%) blur(1px)
+}
+
+.Picture-btn {
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  font-size: 30px; 
+  cursor: pointer;
+  outline: none;
+  background: none; 
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}

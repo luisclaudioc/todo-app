@@ -18,7 +18,6 @@ export const picturesSlice = createSlice({
             state.picturesAreLoading = false;
             state.picturesHaveFailed = false;
             state.pictures = action.payload;
-            console.log(state.pictures)
         },
         fetchPicturesFailure: (state, action) => {
             state.picturesAreLoading = false;
@@ -30,11 +29,13 @@ export const picturesSlice = createSlice({
 export const fetchPictures = () => async (dispatch) => {
     dispatch(fetchPicturesStart());
     try {
-        const client = createClient('E9stndDRjlQ5B0V2IqUwIFSUnE8p2loMVmMIpmbeum1w35YD2VQ2i4bI');
-        const query = 'Nature';
-
-        const result = await client.photos.search({ query, per_page: 4 }).then(photos => photos.photos);
+        const client = createClient(process.env.REACT_APP_PEXELS_API_KEY);
+        const query = 'sky nature';
+        const orientation = 'landscape';
+        const size = "large";
         
+        const result = await client.photos.search({ query, orientation, size, per_page: 10 }).then(photos => photos.photos);
+       
         dispatch(fetchPicturesSuccess(result));
     } catch (error) {
         dispatch(fetchPicturesFailure(error.message));
@@ -42,6 +43,6 @@ export const fetchPictures = () => async (dispatch) => {
 };
 
 
-export const selectPictures = (state) => state.pictures;
+export const selectPictures = (state) => state.picture;
 export const { fetchPicturesStart, fetchPicturesSuccess, fetchPicturesFailure } = picturesSlice.actions;
 export default picturesSlice.reducer;

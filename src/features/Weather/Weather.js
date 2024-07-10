@@ -40,7 +40,7 @@ export default function Weather() {
 
     return (
         <div className="Weather">
-            <h1>{temperature ? temperature.temperature_2m : ""}°C</h1>
+            <h1 className="Temperature">{temperature ? temperature.temperature_2m : ""}°C</h1>
         </div>
     )
 }
